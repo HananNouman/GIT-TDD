@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 50000",
+    "test1": "karma test",
     "start": "nodemon server/index.js"
   },
   "author": "RBK",
