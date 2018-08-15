@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma test",
+    "test": "mocha --timeout 50000",
     "start": "nodemon server/index.js"
   },
   "author": "RBK",
@@ -26,6 +26,7 @@
     "mongoose": "^5.0.15",
     "nodemon": "^1.17.3",
     "path": "^0.12.7",
+    "request": "^2.88.0",
     "router": "^1.3.2",
     "sinon": "^6.1.4",
     "sinon-mongoose": "^2.2.1"

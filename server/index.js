@@ -8,13 +8,26 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../angular-client/')));
 
 app.get('/cats', function (req, res) {
-  // TODO - your code here!
-  
+	db.Cat.find({}, function (err, cats) {
+       res.send(cats);
+    });
 
+  // TODO - your code here! 
 });
 
 app.post('/cats', function (req, res) {
   // TODO - your code here!
+  var data = {catName:req.body.catName,
+  ownerEmail:req.body.ownerEmail,
+  imageUrl:req.body.imageUrl,
+  adoptionMessage:req.body.adoptionMessage}
+ 
+  db.save(data, function(err,dataa){
+  	if(err)
+  	console.log(err)
+  	console.log('save')
+  res.sendStatus(201,dataa)
+  })
   
 })
 
